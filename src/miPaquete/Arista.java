@@ -1,7 +1,6 @@
-package MiPaquete;
+package miPaquete;
 
 public class Arista {
-
 	private int nodo1;
 	private int nodo2;
 	

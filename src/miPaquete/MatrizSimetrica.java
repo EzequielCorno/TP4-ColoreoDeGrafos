@@ -1,16 +1,18 @@
-package MiPaquete;
+package miPaquete;
 
 public class MatrizSimetrica {
-	
+
 	private boolean[] matrizSimetrica;
 	private int ordenMatriz;
 	private int dimensionVector;
-	
-	/** Constructor de la Matriz simetrica a partir de un orden
-	 * @param n 
+
+	/**
+	 * Constructor de la Matriz simetrica a partir de un orden
+	 * 
+	 * @param n
 	 */
 	public MatrizSimetrica(int n) {
-		
+
 		this.ordenMatriz = n;
 		this.dimensionVector = (n * n - n) / 2;
 		matrizSimetrica = new boolean[this.dimensionVector];
@@ -27,8 +29,8 @@ public class MatrizSimetrica {
 		return matrizSimetrica[pos];
 	}
 
-	public int getIndice(int fil, int col) {
-		return (int) (fil * this.ordenMatriz + col - (Math.pow(fil, 2) + 3 * fil + 2) / 2);
+	public boolean getIndice(int fil, int col) {
+		return matrizSimetrica[(int) (fil * this.ordenMatriz + col - (Math.pow(fil, 2) + 3 * fil + 2) / 2)];
 	}
 
 	public void setIndice(int fil, int col) {
