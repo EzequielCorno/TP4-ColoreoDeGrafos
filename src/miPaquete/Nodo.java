@@ -6,7 +6,7 @@ public class Nodo {
 	private int color;
 
 	public Nodo(int n, int c) {
-		numero = n;
+		numero = n+1;
 		color = c;
 		grado = 0;
 	}

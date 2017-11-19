@@ -30,10 +30,28 @@ public class MatrizSimetrica {
 	}
 
 	public boolean getIndice(int fil, int col) {
-		return matrizSimetrica[(int) (fil * this.ordenMatriz + col - (Math.pow(fil, 2) + 3 * fil + 2) / 2)];
+		int aux;
+		if (fil == col) {
+			return false;			
+		}
+		if (col < fil) {
+			aux = fil;
+			fil = col;
+			col = aux;
+		}
+		return matrizSimetrica[fil * this.ordenMatriz + col - (fil * fil + 3 * fil + 2) / 2];
 	}
 
 	public void setIndice(int fil, int col) {
+		int aux;
+		if (fil == col) {
+			return;			
+		}
+		if (fil > col) {
+			aux = fil;
+			fil = col;
+			col = aux;
+		}
 		matrizSimetrica[fil * this.ordenMatriz + col - (fil * fil + 3 * fil + 2) / 2] = true;
 	}
 
