@@ -151,6 +151,10 @@ public class GrafoNDNP {
 		
 		salida.close();
 	}
+
+	public MatrizSimetrica getGrafo() {
+		return grafo;
+	}
 	
 	
 }
