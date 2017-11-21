@@ -63,8 +63,9 @@ public class GrafoNDNP {
 		//pinto el primer nodo del primer color
 		nodos.get(0).setColor(colorAPintar);
 		cantNodosAPintar--;
-		int i = 0;
-		while(cantNodosAPintar > 0){
+		//int i = 0;
+		//while(cantNodosAPintar > 0){
+		for(int i=0;i<cantNodos;i++){
 			int j = 0;
 			int cantPintados = 0;
 			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
@@ -80,9 +81,9 @@ public class GrafoNDNP {
 				}
 				j++;
 			}
-			if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
+			//if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
 				colorAPintar = ++color;
-			i++;
+			//i++;
 		}
 		cantColores = color;
 	}
@@ -99,8 +100,9 @@ public class GrafoNDNP {
 		//pinto el primer nodo del primer color
 		nodos.get(0).setColor(colorAPintar);
 		cantNodosAPintar--;
-		int i = 0;
-		while(cantNodosAPintar > 0){
+		//int i = 0;
+		//while(cantNodosAPintar > 0){
+		for(int i=0;i<cantNodos;i++){
 			int j = 0;
 			int cantPintados = 0;
 			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
@@ -116,9 +118,9 @@ public class GrafoNDNP {
 				}
 				j++;
 			}
-			if(cantNodosAPintar > 0 /* && cantPintados > 0*/)
+			//if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
 				colorAPintar = ++color;
-			i++;
+			//i++;
 		}
 		cantColores = color;
 	}
@@ -130,8 +132,9 @@ public class GrafoNDNP {
 		//pinto el primer nodo del primer color
 		nodos.get(0).setColor(colorAPintar);
 		cantNodosAPintar--;
-		int i = 0;
-		while(cantNodosAPintar > 0){
+		//int i = 0;
+		//while(cantNodosAPintar > 0){
+		for(int i=0;i<cantNodos;i++){
 			int j = 0;
 			int cantPintados = 0;
 			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
@@ -147,9 +150,9 @@ public class GrafoNDNP {
 				}
 				j++;
 			}
-			if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
+			//if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
 				colorAPintar = ++color;
-			i++;
+			//i++;
 		}
 		cantColores = color;
 	}
