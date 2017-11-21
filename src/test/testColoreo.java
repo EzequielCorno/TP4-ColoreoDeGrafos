@@ -93,4 +93,25 @@ public class testColoreo {
 		g12.colorearWelsh_Powell();
 		g12.imprimirSalida("grafoColoreadoWelshPowellRegPorAdy.out");
 	}
+	
+	@Test
+	public void testColoreoSecuencialRegPorGra() throws FileNotFoundException {
+		GrafoNDNP g10 = new GrafoNDNP("grafoRegularPorGrado.in");
+		g10.colorearSecuencial();
+		g10.imprimirSalida("grafoColoreadoSecuencialRegPorGra.out");
+	}
+
+	@Test
+	public void testColoreoMatulaRegPorGra() throws FileNotFoundException {
+		GrafoNDNP g11 = new GrafoNDNP("grafoRegularPorGrado.in");
+		g11.colorearMatula();
+		g11.imprimirSalida("grafoColoreadoMatulaRegPorGra.out");
+	}
+	
+	@Test
+	public void testColoreoWelsh_PowellRegPorGra() throws FileNotFoundException {
+		GrafoNDNP g12 = new GrafoNDNP("grafoRegularPorGrado.in");
+		g12.colorearWelsh_Powell();
+		g12.imprimirSalida("grafoColoreadoWelshPowellRegPorGra.out");
+	}
 }
