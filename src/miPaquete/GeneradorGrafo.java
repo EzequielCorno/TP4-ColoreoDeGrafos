@@ -22,7 +22,7 @@ public class GeneradorGrafo {
 		 gradoMin = Integer.MAX_VALUE;
 		 gradoMax = 0;
 		 grafo = new MatrizSimetrica(nd);
-		 porcentajeAdyacencia = 0.0;
+		 porcentajeAdyacencia = 0;
 		 for(int i = 0; i < cantNodos ; i++)
 			 nodos.add(new Nodo(i,-1));
 	}
@@ -54,14 +54,14 @@ public class GeneradorGrafo {
 			if(gradoMin > nodos.get(i).getGrado())
 				gradoMin = nodos.get(i).getGrado();
 		}
-		porcentajeAdyacencia = (cantAristas /(cantNodos*(cantNodos - 1) / 2));
+		porcentajeAdyacencia = ((double)cantAristas /(double)cantMaxAristas);
 	}
 	
 	public void aleatorioPorcentajeAdyacencia(double ad){
 		int nodo1;
 		int nodo2;
 		int auxAristas;
-		porcentajeAdyacencia = ad;
+		porcentajeAdyacencia = (double)ad;
 		cantAristas = (int) ((cantNodos * (cantNodos -1) / 2) * porcentajeAdyacencia);
 		auxAristas = cantAristas;
 		while (auxAristas > 0) {
@@ -127,11 +127,12 @@ public class GeneradorGrafo {
 		gradoMin = grados;
 		gradoMax = grados;
 		//porcentajeAdyacencia = (grados / (cantNodos - 1 )) * 100;
-		porcentajeAdyacencia = (cantAristas /(cantNodos*(cantNodos - 1) / 2));
+		porcentajeAdyacencia = ((double)cantAristas /(double)(cantNodos*(cantNodos - 1) / 2));
 	}
 	
 	public void regularPorcentajeDeAdyacencia(double ad){
 	int grado = (int) ( ad * (cantNodos - 1) );
+	porcentajeAdyacencia = ad;
 	regularPorGrado(grado);
 	}
 	
@@ -158,12 +159,12 @@ public class GeneradorGrafo {
 			if(gradoMin > nodos.get(i).getGrado())
 				gradoMin = nodos.get(i).getGrado();
 		}
-		porcentajeAdyacencia = (cantAristas /(cantNodos*(cantNodos - 1) / 2));
+		porcentajeAdyacencia = ((double)cantAristas /(double)(cantNodos*(cantNodos - 1) / 2));
 	}
 	
 	public void imprimirSalida(String path) throws FileNotFoundException {
 		PrintWriter salida = new PrintWriter(new File(path));
-		salida.println(cantNodos +" "+ cantAristas +" "+ porcentajeAdyacencia +" "+ gradoMax +" "+ gradoMin);
+		salida.println(cantNodos +" "+ cantAristas +" "+ Math.round(porcentajeAdyacencia * 100d)/100d +" "+ gradoMax +" "+ gradoMin);
 		for(int i = 0; i < cantNodos ; i++) {
 			for(int j = 0; j < cantNodos ; j++) {
 				if(grafo.getIndice(i, j)) {

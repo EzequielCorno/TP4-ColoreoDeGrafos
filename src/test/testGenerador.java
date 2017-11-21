@@ -22,7 +22,7 @@ public class testGenerador {
 	public void testGeneradorRegularPorAdyacencia() throws FileNotFoundException{
 		GeneradorGrafo g1 = new GeneradorGrafo(4);
 		g1.regularPorcentajeDeAdyacencia(0.5);
-		g1.imprimirSalida("grafoReguarPorAdyacencia.in");
+		g1.imprimirSalida("grafoRegularPorAdyacencia.in");
 	}
 
 	@Test
