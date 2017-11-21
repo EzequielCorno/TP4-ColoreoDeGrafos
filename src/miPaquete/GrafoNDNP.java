@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class GrafoNDNP {
@@ -26,10 +27,10 @@ public class GrafoNDNP {
 		int n1;
 		int n2;
 		nodos = new ArrayList<Nodo>();
-
+		scan.useLocale(Locale.ENGLISH);
 		this.cantNodos = scan.nextInt();
 		this.cantAristas = scan.nextInt();
-		this.porcentajeAdyacencia = Double.parseDouble(scan.next());
+		this.porcentajeAdyacencia = scan.nextDouble();
 		this.gradoMax = scan.nextInt();
 		this.gradoMin = scan.nextInt();
 		this.grafo = new MatrizSimetrica(this.cantNodos);
@@ -38,12 +39,12 @@ public class GrafoNDNP {
 			nodos.add(new Nodo(i,-1));
 		}
 		
-		for(int j = 0 ; j < cantAristas ; j++){
+		for(int j = 0 ; j < cantAristas*2 ; j++){
 			n1 = scan.nextInt();
 			n2 = scan.nextInt();
-			nodos.get(n1-1).aumentarGrado();
-			nodos.get(n2-1).aumentarGrado();
-			grafo.setIndice(n1-1, n2-1);
+			nodos.get(n1 - 1).aumentarGrado();
+			nodos.get(n2 - 1).aumentarGrado();
+			grafo.setIndice(n1 - 1, n2 - 1);
 			
 		}
 		
@@ -66,15 +67,20 @@ public class GrafoNDNP {
 		while(cantNodosAPintar > 0){
 			int j = 0;
 			int cantPintados = 0;
-			while(cantNodosAPintar > 0 && j < cantNodos){
+			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
 				if(!esAdyacente(i, j) && nodos.get(j).getColor() == -1){
 					nodos.get(j).setColor(colorAPintar);
 					cantNodosAPintar--;
 					cantPintados++;
 				}
+				if(esAdyacente(i, j) && nodos.get(i).getColor() == nodos.get(j).getColor()){
+					nodos.get(j).setColor(colorAPintar);
+					cantNodosAPintar--;
+					cantPintados++;					
+				}
 				j++;
 			}
-			if(cantNodosAPintar > 0 && cantPintados > 0)
+			if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
 				colorAPintar = ++color;
 			i++;
 		}
@@ -97,15 +103,20 @@ public class GrafoNDNP {
 		while(cantNodosAPintar > 0){
 			int j = 0;
 			int cantPintados = 0;
-			while(cantNodosAPintar > 0 && j < cantNodos){
+			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
 				if(!esAdyacente(i, j) && nodos.get(j).getColor() == -1){
 					nodos.get(j).setColor(colorAPintar);
 					cantNodosAPintar--;
 					cantPintados++;
 				}
+				if(esAdyacente(i, j) && nodos.get(i).getColor() == nodos.get(j).getColor()){
+					nodos.get(j).setColor(colorAPintar);
+					cantNodosAPintar--;
+					cantPintados++;					
+				}
 				j++;
 			}
-			if(cantNodosAPintar > 0 && cantPintados > 0)
+			if(cantNodosAPintar > 0 /* && cantPintados > 0*/)
 				colorAPintar = ++color;
 			i++;
 		}
@@ -123,15 +134,20 @@ public class GrafoNDNP {
 		while(cantNodosAPintar > 0){
 			int j = 0;
 			int cantPintados = 0;
-			while(cantNodosAPintar > 0 && j < cantNodos){
+			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
 				if(!esAdyacente(i, j) && nodos.get(j).getColor() == -1){
 					nodos.get(j).setColor(colorAPintar);
 					cantNodosAPintar--;
 					cantPintados++;
 				}
+				if(esAdyacente(i, j) && nodos.get(i).getColor() == nodos.get(j).getColor()){
+					nodos.get(j).setColor(colorAPintar);
+					cantNodosAPintar--;
+					cantPintados++;					
+				}
 				j++;
 			}
-			if(cantNodosAPintar > 0 && cantPintados > 0)
+			if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
 				colorAPintar = ++color;
 			i++;
 		}

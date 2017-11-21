@@ -17,7 +17,7 @@ public class MatrizSimetrica {
 		this.dimensionVector = (n * n - n) / 2;
 		matrizSimetrica = new boolean[this.dimensionVector];
 
-		for (int i = 0; i < n - 1; i++)
+		for (int i = 0; i < n; i++)
 			matrizSimetrica[i] = false;
 	}
 

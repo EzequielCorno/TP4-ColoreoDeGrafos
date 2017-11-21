@@ -13,8 +13,8 @@ public class testGenerador {
 
 	@Test
 	public void testGeneradorRegularPorGrado() throws FileNotFoundException{
-		GeneradorGrafo g1 = new GeneradorGrafo(4);
-		g1.regularPorGrado(3);
+		GeneradorGrafo g1 = new GeneradorGrafo(100);
+		g1.regularPorGrado(50);
 		g1.imprimirSalida("grafoRegularPorGrado.in");
 	}
 	
