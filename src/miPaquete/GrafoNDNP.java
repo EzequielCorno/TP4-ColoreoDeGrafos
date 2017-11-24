@@ -55,6 +55,7 @@ public class GrafoNDNP {
 		int color = 1;
 		int colorAPintar = color;
 		int cantNodosAPintar = cantNodos;
+		mezclar();
 		Collections.sort(nodos, new Comparator<Nodo>(){
 			public int compare(Nodo n1, Nodo n2){
 				return n1.getGrado()-n2.getGrado();
@@ -92,6 +93,7 @@ public class GrafoNDNP {
 		int color = 1;
 		int colorAPintar = color;
 		int cantNodosAPintar = cantNodos;
+		mezclar();
 		Collections.sort(nodos, new Comparator<Nodo>(){
 			public int compare(Nodo n1, Nodo n2){
 				return n2.getGrado()-n1.getGrado();
@@ -129,6 +131,7 @@ public class GrafoNDNP {
 		int color = 1;
 		int colorAPintar = color;
 		int cantNodosAPintar = cantNodos;
+		mezclar();
 		//pinto el primer nodo del primer color
 		nodos.get(0).setColor(colorAPintar);
 		cantNodosAPintar--;
@@ -159,6 +162,10 @@ public class GrafoNDNP {
 	
 	private boolean esAdyacente(int nodo1 , int nodo2){
 		return grafo.getIndice(nodo1, nodo2);
+	}
+	
+	private void mezclar(){
+		Collections.shuffle(nodos);
 	}
 	
 	public void imprimirSalida(String path) throws FileNotFoundException{
