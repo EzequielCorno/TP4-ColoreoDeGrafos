@@ -174,6 +174,10 @@ public class GrafoNDNP {
 	public MatrizSimetrica getGrafo() {
 		return grafo;
 	}
+
+	public int getCantColores() {
+		return cantColores;
+	}
 	
 	
 }
