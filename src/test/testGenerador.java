@@ -45,4 +45,27 @@ public class testGenerador {
 		g1.aleatorioPorcentajeAdyacencia(0.5);
 		g1.imprimirSalida("grafoAleatorioPorcentajeAdyacencia.in");
 	}
+	
+	@Test
+	public void testAnalisis() throws FileNotFoundException{
+		GeneradorGrafo g = new GeneradorGrafo(600);
+		g.aleatorioPorcentajeAdyacencia(0.4);
+		g.imprimirSalida("aleatorio40.in");
+		
+		GeneradorGrafo g2 = new GeneradorGrafo(600);
+		g2.aleatorioPorcentajeAdyacencia(0.6);
+		g2.imprimirSalida("aleatorio60.in");
+		
+		GeneradorGrafo g3 = new GeneradorGrafo(600);
+		g3.aleatorioPorcentajeAdyacencia(0.9);
+		g3.imprimirSalida("aleatorio90.in");
+		
+		GeneradorGrafo g4 = new GeneradorGrafo(1000);
+		g4.regularPorcentajeDeAdyacencia(0.5);
+		g4.imprimirSalida("regular50.in");
+		
+		GeneradorGrafo g5 = new GeneradorGrafo(1000);
+		g5.regularPorcentajeDeAdyacencia(0.75);
+		g5.imprimirSalida("regular75.in");
+	}
 }

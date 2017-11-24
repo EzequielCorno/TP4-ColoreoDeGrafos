@@ -13,7 +13,7 @@ public class GrafoNDNP {
 	
 	private MatrizSimetrica grafo;
 	private int cantNodos;
-	private int cantAristas;
+	private double cantAristas;
 	private double porcentajeAdyacencia;
 	private int gradoMax;
 	private int gradoMin;
@@ -39,7 +39,7 @@ public class GrafoNDNP {
 			nodos.add(new Nodo(i,-1));
 		}
 		
-		for(int j = 0 ; j < cantAristas*2 ; j++){
+		for(double j = 0 ; j < cantAristas*2 ; j++){
 			n1 = scan.nextInt();
 			n2 = scan.nextInt();
 			nodos.get(n1 - 1).aumentarGrado();
@@ -47,7 +47,6 @@ public class GrafoNDNP {
 			grafo.setIndice(n1 - 1, n2 - 1);
 			
 		}
-		
 		scan.close();
 	}
 	
