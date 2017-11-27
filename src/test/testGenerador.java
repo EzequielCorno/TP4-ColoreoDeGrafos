@@ -11,21 +11,21 @@ import miPaquete.GeneradorGrafo;
 
 public class testGenerador {
 
-	@Test
+	/*@Test
 	public void testGeneradorRegularPorGrado() throws FileNotFoundException{
 		GeneradorGrafo g1 = new GeneradorGrafo(100);
 		g1.regularPorGrado(3);
 		g1.imprimirSalida("grafoRegularPorGrado.in");
-	}
+	}*/
 	
 	@Test
 	public void testGeneradorRegularPorAdyacencia() throws FileNotFoundException{
-		GeneradorGrafo g1 = new GeneradorGrafo(4);
-		g1.regularPorcentajeDeAdyacencia(0.5);
-		g1.imprimirSalida("grafoRegularPorAdyacencia.in");
+		GeneradorGrafo g1 = new GeneradorGrafo(1000);
+		g1.regularPorcentajeDeAdyacencia(0.75);
+		g1.imprimirSalida("1000_75.in");
 	}
 
-	@Test
+	/*@Test
 	public void testGeneradorNPartito() throws FileNotFoundException{
 		GeneradorGrafo g1 = new GeneradorGrafo(400);
 		g1.nPartito(100);
@@ -41,8 +41,8 @@ public class testGenerador {
 	
 	@Test
 	public void testGeneradorAleatorioPorcentajeAdyacencia() throws FileNotFoundException{
-		GeneradorGrafo g1 = new GeneradorGrafo(4);
-		g1.aleatorioPorcentajeAdyacencia(0.5);
-		g1.imprimirSalida("grafoAleatorioPorcentajeAdyacencia.in");
-	}
+		GeneradorGrafo g1 = new GeneradorGrafo(600);
+		g1.aleatorioPorcentajeAdyacencia(0.9);
+		g1.imprimirSalida("600_90.in");
+	}*/
 }

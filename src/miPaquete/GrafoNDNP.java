@@ -54,110 +54,110 @@ public class GrafoNDNP {
 	public void colorearMatula(){
 		int color = 1;
 		int colorAPintar = color;
+		int columna;
 		int cantNodosAPintar = cantNodos;
-		mezclar();
+		
 		Collections.sort(nodos, new Comparator<Nodo>(){
 			public int compare(Nodo n1, Nodo n2){
 				return n1.getGrado()-n2.getGrado();
 			}
 		});
+		mezclar();
 		//pinto el primer nodo del primer color
 		nodos.get(0).setColor(colorAPintar);
-		cantNodosAPintar--;
-		//int i = 0;
-		//while(cantNodosAPintar > 0){
-		for(int i=0;i<cantNodos;i++){
-			int j = 0;
-			int cantPintados = 0;
-			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
-				if(!esAdyacente(i, j) && nodos.get(j).getColor() == -1){
-					nodos.get(j).setColor(colorAPintar);
-					cantNodosAPintar--;
-					cantPintados++;
+		for (int nodoAcolorear = 1; nodoAcolorear < cantNodos; nodoAcolorear++)
+		{
+			//coloreo el nodo que tomo  
+			nodos.get(nodoAcolorear).setColor(color);
+
+			columna = 0;
+			while ( columna < cantNodos){
+				if(	nodos.get(nodoAcolorear).getNumero() != nodos.get(columna).getNumero() &&
+					esAdyacente(nodos.get(nodoAcolorear).getNumero()-1, nodos.get(columna).getNumero()-1)  && 
+					nodos.get(nodoAcolorear).getColor() == nodos.get(columna).getColor()
+				){
+					color++;
+					if(color > cantColores) //CREE UN NUEVO COLOR
+						cantColores = color; 
+					else
+						columna= -1;
+					nodos.get(nodoAcolorear).setColor(color);
 				}
-				if(esAdyacente(i, j) && nodos.get(i).getColor() == nodos.get(j).getColor()){
-					nodos.get(j).setColor(colorAPintar);
-					cantNodosAPintar--;
-					cantPintados++;					
-				}
-				j++;
+				columna++;
 			}
-			//if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
-				colorAPintar = ++color;
-			//i++;
+			color = 1;
 		}
-		cantColores = color;
 	}
 	
 	public void colorearWelsh_Powell(){
 		int color = 1;
 		int colorAPintar = color;
+		int columna;
 		int cantNodosAPintar = cantNodos;
-		mezclar();
+		
 		Collections.sort(nodos, new Comparator<Nodo>(){
 			public int compare(Nodo n1, Nodo n2){
 				return n2.getGrado()-n1.getGrado();
 			}
 		});
+		mezclar();
 		//pinto el primer nodo del primer color
 		nodos.get(0).setColor(colorAPintar);
-		cantNodosAPintar--;
-		//int i = 0;
-		//while(cantNodosAPintar > 0){
-		for(int i=0;i<cantNodos;i++){
-			int j = 0;
-			int cantPintados = 0;
-			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
-				if(!esAdyacente(i, j) && nodos.get(j).getColor() == -1){
-					nodos.get(j).setColor(colorAPintar);
-					cantNodosAPintar--;
-					cantPintados++;
+		for (int nodoAcolorear = 1; nodoAcolorear < cantNodos; nodoAcolorear++)
+		{
+			//coloreo el nodo que tomo  
+			nodos.get(nodoAcolorear).setColor(color);
+
+			columna = 0;
+			while ( columna < cantNodos){
+				if(	nodos.get(nodoAcolorear).getNumero() != nodos.get(columna).getNumero() &&
+					esAdyacente(nodos.get(nodoAcolorear).getNumero()-1, nodos.get(columna).getNumero()-1)  && 
+					nodos.get(nodoAcolorear).getColor() == nodos.get(columna).getColor()
+				){
+					color++;
+					if(color > cantColores) //CREE UN NUEVO COLOR
+						cantColores = color; 
+					else
+						columna= -1;
+					nodos.get(nodoAcolorear).setColor(color);
 				}
-				if(esAdyacente(i, j) && nodos.get(i).getColor() == nodos.get(j).getColor()){
-					nodos.get(j).setColor(colorAPintar);
-					cantNodosAPintar--;
-					cantPintados++;					
-				}
-				j++;
+				columna++;
 			}
-			//if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
-				colorAPintar = ++color;
-			//i++;
+			color = 1;
 		}
-		cantColores = color;
 	}
 	
 	public void colorearSecuencial(){
 		int color = 1;
 		int colorAPintar = color;
 		int cantNodosAPintar = cantNodos;
+		int columna;
 		mezclar();
 		//pinto el primer nodo del primer color
 		nodos.get(0).setColor(colorAPintar);
-		cantNodosAPintar--;
-		//int i = 0;
-		//while(cantNodosAPintar > 0){
-		for(int i=0;i<cantNodos;i++){
-			int j = 0;
-			int cantPintados = 0;
-			while(/*cantNodosAPintar > 0 &&*/ j < cantNodos){
-				if(!esAdyacente(i, j) && nodos.get(j).getColor() == -1){
-					nodos.get(j).setColor(colorAPintar);
-					cantNodosAPintar--;
-					cantPintados++;
+		for (int nodoAcolorear = 1; nodoAcolorear < cantNodos; nodoAcolorear++)
+		{
+			//coloreo el nodo que tomo  
+			nodos.get(nodoAcolorear).setColor(color);
+
+			columna = 0;
+			while ( columna < cantNodos){
+				if(	nodos.get(nodoAcolorear).getNumero() != nodos.get(columna).getNumero() &&
+					esAdyacente(nodos.get(nodoAcolorear).getNumero()-1, nodos.get(columna).getNumero()-1)  && 
+					nodos.get(nodoAcolorear).getColor() == nodos.get(columna).getColor()
+				){
+					color++;
+					if(color > cantColores) //CREE UN NUEVO COLOR
+						cantColores = color; 
+					else
+						columna= -1;
+					nodos.get(nodoAcolorear).setColor(color);
 				}
-				if(esAdyacente(i, j) && nodos.get(i).getColor() == nodos.get(j).getColor()){
-					nodos.get(j).setColor(colorAPintar);
-					cantNodosAPintar--;
-					cantPintados++;					
-				}
-				j++;
+				columna++;
 			}
-			//if(cantNodosAPintar > 0 /*&& cantPintados > 0*/)
-				colorAPintar = ++color;
-			//i++;
+			color = 1;
 		}
-		cantColores = color;
+
 	}
 	
 	private boolean esAdyacente(int nodo1 , int nodo2){
@@ -166,6 +166,13 @@ public class GrafoNDNP {
 	
 	private void mezclar(){
 		Collections.shuffle(nodos);
+	}
+	
+	public void reiniciarColoreo(){
+		cantColores = 1;
+		for(Nodo n : nodos){
+			n.setColor(-1);
+		}
 	}
 	
 	public void imprimirSalida(String path) throws FileNotFoundException{
