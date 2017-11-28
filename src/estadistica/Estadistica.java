@@ -44,7 +44,10 @@ public class Estadistica {
 		}
 		salida3.close();
 		*/
-		Scanner sc = new Scanner(new File("estadisticaMatula40.csv"));
+		
+		PrintWriter salida = new PrintWriter(new File("ResumenWelshPowell90%.csv"));
+		
+		Scanner sc = new Scanner(new File("estadisticaWelshPowell90.csv"));
 		HashMap<Integer, Integer> frecuencia = new HashMap<Integer,Integer>();
 		for(int i = 0; i < 10000 ; i++){
 			String linea = sc.nextLine();
@@ -58,8 +61,10 @@ public class Estadistica {
 		sc.close();
 		
 		for (Entry<Integer, Integer> entry : frecuencia.entrySet()) {
-		    System.out.println("cantColores= " + entry.getKey() + ", cantRepeciones= " + entry.getValue());
+		    //System.out.println("cantColores= " + entry.getKey() + ", cantRepeciones= " + entry.getValue());
+			salida.println(entry.getKey() +";"+ entry.getValue());
 		}
+		salida.close();
 	}
 
 }
